@@ -15,15 +15,12 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
- 
+    void
+    bool
+    int
+    char
+    float
+    double 
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -62,65 +59,134 @@ video: Chapter 2 - Part 3
 //2)
 void variableDeclarations()
 {
-    //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    bool familiarWithJuce = false;
+    bool practiceMakesPerfect = true;
+    bool readyFlag = true;
 
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    int fingers = 8;
+    int thumbs = 2;
+    int noteCount = 36;
+
+    char noteClass = 'A';
+    char noteAccidental = '#';
+    char delimiter = ',';
+
+    float quarter = 0.25f;
+    float half = 0.5f;
+    float eighth = 0.125f;
+
+    double epsilon = 0.0000000001;
+    double pi = 3.1415926535897932384626433832795028841971693;
+    double third = 1/3;
+
+    ignoreUnused(
+    	familiarWithJuce, 
+    	practiceMakesPerfect,
+    	readyFlag, 
+    	fingers, 
+    	thumbs, 
+    	noteCount, 
+    	noteClass, 
+    	noteAccidental, 
+    	delimiter, 
+    	quarter, 
+    	half, 
+    	eighth, 
+    	epsilon, 
+        pi, 
+        third
+    );
 }
 
 /*
  10 functions
- example:
- note: this example shows the result after completing steps 3-8
  */
-bool rentACar(int rentalDuration, int carType = 0)  //function declaration with random number of arguments, arbitrary number of arguments have default value
-{ 
-    ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
-    return {}; //if your function returns something other than void, add 'return {};' at the end of it.
-} 
 
 /*
  1)
  */
+double calculatePi(double circumference, double diameter, int precision = 11)
+{
+    ignoreUnused(circumference, diameter, precision);
+    return {};
+}
 
 /*
  2)
  */
+int countDigits(int fingers, int thumbs = 2)
+{
+    ignoreUnused(fingers, thumbs);
+    return {};
+}
 
 /*
  3)
  */
+float distanceFromGreatness(bool familiarWithJuce, bool readyFlag = true)
+{
+    ignoreUnused(familiarWithJuce, readyFlag);
+    return {};
+}
 
 /*
  4)
  */
-
+char intToChar(int integer = 33)
+{
+    ignoreUnused(integer);
+    return {};
+}
+    
 /*
  5)
  */
-
+bool isNearZero(float value)
+{
+    ignoreUnused(value);
+    return {};
+}
+    
 /*
  6)
  */
+bool isPrime(int number = 331999){
+    ignoreUnused(number);
+    return {};
+}
 
 /*
  7)
  */
+void playNote(char pitchClass, char accidental, int octave = 4, float volume = 80.f, float duration = 0.25f)
+{
+    ignoreUnused(pitchClass, accidental, octave, volume, duration);
+}
 
 /*
  8)
  */
-
+void setNote(char noteClass, char noteAccidental, float duration = 0.25f)
+{
+    ignoreUnused(noteClass, noteAccidental, duration);
+}
+    
 /*
  9)
  */
-
+void thinkTooHard(int thoughts = 10) 
+{
+    ignoreUnused(thoughts);
+}
+    
 /*
  10)
  */
-
+void waitForNextTuesday(int dayOfWeek = 1, int msPollingRate = 60000)
+{
+    ignoreUnused(dayOfWeek, msPollingRate);
+}
+    
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -137,31 +203,44 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 
 int main()
 {
-    //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
-    auto carRented = rentACar(6, 2); 
-    
     //1)
+    auto pi = calculatePi(4.71239, 1.5, 32);
     
     //2)
+    auto numberOfDigits = countDigits(6, 4);
     
     //3)
+    auto meters = distanceFromGreatness(false, true);
     
     //4)
+    auto a = intToChar(97);
     
     //5)
+    auto nearlyNothing = isNearZero(0.005f);
     
     //6)
+    auto indivisible = isPrime(3);
     
     //7)
+    playNote('A', '#', 3, 75.f, 0.5f);
     
     //8)
+    setNote('B', 'b', 0.125f);
     
     //9)
+    thinkTooHard(1000000000);
     
     //10)
+    waitForNextTuesday(4, 3600000);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(
+        pi, 
+        numberOfDigits,
+        meters,
+        a,
+        nearlyNothing,
+        indivisible
+    );
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
