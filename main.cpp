@@ -150,7 +150,8 @@ bool isNearZero(float value)
 /*
  6)
  */
-bool isPrime(int number = 331999){
+bool isPrime(int number = 331999)
+{
     ignoreUnused(number);
     return {};
 }
